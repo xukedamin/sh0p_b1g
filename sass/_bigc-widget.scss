@@ -1,0 +1,93 @@
+// _bigc-widget.scss
+
+.widget.widget-category h3 {
+    font-size: 13px;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+.widget-title.sub-title {
+    margin: 0 0 25px;
+}
+.widget.widget-category > h3 a {
+    color: $color_shark;
+}
+.widget.widget-category > h3 a:hover ,.widget.widget-category ul li a:hover,.sidebar-product .title-product a:hover{
+    color: $color_dusty-gray;
+}
+.widget.widget-category > ul {
+    list-style: outside none none;
+    margin: 0 0 40px;
+    padding: 0;
+}
+.widget.widget-category > ul:last-child {
+    margin-bottom: 0;
+}
+.widget.widget-category ul li a {
+    color: $color_dove-gray;
+    padding-left: 30px;
+    position: relative;
+}
+.widget.widget-category ul li a::before {
+
+    @extend %jv-font-Linearicons;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.sidebar-product .widget {
+    border: 1px solid $color_mercury;
+    margin-bottom: 30px;
+    padding:30px;
+}
+.sidebar-product ul{
+	padding:0;
+	list-style:none;
+}
+.product-thumb {
+    background: $color_wild-sand none repeat scroll 0 0;
+    float: left;
+    margin-right: 20px;
+    max-width: 70px;
+    width: 100%;
+}
+.sidebar-product .title-product a {
+    color: $color_dove-gray;
+}
+.widget-top-seller li {
+    margin-bottom: 20px;
+}
+.widget.widget-category li {
+    border-bottom: 1px solid $color_mercury;
+    padding: 8px 0;
+}
+.widget.widget-category li:last-child{
+	border-bottom: 1px solid transparent;
+} 
+.widget.widget-compare li{
+	position:relative;
+}
+.widget.widget-compare ul li .remove-product-compare {
+    color: $color_shark;
+    left: -20px;
+    position: absolute;
+    top: 0;
+}
+.widget.widget-compare ul li{
+	margin-bottom:20px;
+}
+.btn-link-default.btn-compare {
+    margin-right: 25px;
+    padding: 0 20px;
+}
+.widget-compare-link .clear-compare {
+    color: $color_shark;
+    text-transform: uppercase;
+}
+.widget-compare-link .clear-compare:hover{
+	color:$color_dusty-gray;
+}
+.widget-compare-link {
+    border-top: 1px solid $color_mercury;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
