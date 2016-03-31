@@ -1,109 +1,38 @@
-<div id="header">
-  <div class="top-header">
-    <div class="container">
-      <div class="top-left pull-left hidden-sm">
-        <ul>
-          {% if settings.hotline != blank %}
-            <li class="hotline">
-              <div class="text-title ">
-                {{ 'general.meta.hotline' | t }} <h5 class="color-main"> {{ settings.hotline }}</h5>
-              </div>
-            </li>
-          {% endif %}
-          
-          {% if settings.header_address != blank %}
-            <li class="header_address">
-              <div class="text-title ">
-                <i class="fa fa-map-marker"></i> {{ settings.header_address }}
-              </div>
-            </li>
-          {% endif %}
-          
-          {% if settings.skype != blank %}
-            <li class="header-skype">
-              
-              <a href="skype:{{ settings.skype }}?chat"><i class="fa fa-skype"></i> {{ settings.skype }}</a>
-              
-            </li>
-          {% endif %}
-          
-        </ul>
+{% include 'header-top-black' %}
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-sm-12 col-xs-12">
+          <a  title="{{ shop.name }}" alt="{{ shop.name }}" href="/" rel="home">
+            <span class="logo-table">
+              <span class="logo-table-cell">
+                <img src="{{ 'logo-1.png' | asset_url }}" alt="{{ shop.name }}"  >
+              </span>
+            </span>
+          </a>
+        </div>
+      <div class="col-md-8 col-sm-11 col-xs-12">
+        <div class="main-nav">
+        {% include 'nav' class: 'dropdownMenu main-menu', handle: 'main-menu' %}
+        <div class="mobile-menu">
+          <a href="#" class="show-menu"><span class="lnr lnr-indent-decrease"></span></a>
+          <a href="#" class="hide-menu"><span class="lnr lnr-indent-increase"></span></a>
+        </div>
+        </div>
       </div>
-      <div class="top-right pull-right">
-        {% if shop.customer_accounts_enabled %}
-          {% if customer %}
-            <ul class="dropdownMenu pull-right subrtl">
-              <li>
-                
-                <a   href="/account" data-toggle="tooltip" title="{{ first_name.first_name }} " >
-                  <span class="lnr-user"></span> {{ 'layout.customer.my_account' | t }}
-                </a>
-                <ul class="hidden-xs">
-                  {% capture first_name %}<li><a href="/account">{{ customer.first_name }}</a></li>{% endcapture %}
-                  <li class="customer-navlink"><a href="/account">{{ 'layout.customer.view_account' | t }}</a></li>
-                  <li>{{ 'layout.customer.log_out' | t | customer_logout_link }}</li>
-                </ul>
-              </li>
-            </ul>
-          {% else %}
-            <ul class="dropdownMenu pull-right subrtl">
-              <li> <a  href="/account/login" class="icon-outline-vector-icons-pack-72">
-                <span class="lnr-user"></span> {{ 'layout.customer.my_account' | t }}
-              </a>
-              <ul class="hidden-xs">
-                <li>  {{ 'layout.customer.sign_in' | t | customer_login_link }}</li>
-                {% if shop.customer_accounts_optional %}
-                  <li>  {{ 'layout.customer.create_account' | t | customer_register_link }}</li>
-                {% endif %}
-              </ul>
+      <div class="col-md-2 col-sm-1 col-xs-12">
+        <div class="info-header info-header2">
+          <ul class="info-total">
+            <li class="info-search">
+              <a href="#" class="info-icon icon-search"><span class="lnr lnr-magnifier"></span></a>
+              {% include 'search-bar-2' %}
             </li>
           </ul>
-        {% endif %}
-      {% endif %}
-      <ul class="list-inline pull-right">
-        {% if settings.show_multiple_currencies %}
-          <li>
-            {% include 'currency-picker' %}
-          </li>
-        {% endif %}
-        
-        {% if settings.show_header_cart %}
-          <li class="info-cart">
-            <a href="#" class="mycart-link "><span class="lnr-cart"></span> {{ 'cart.general.mycart' | t }}  <span class="number-cart-total cart-count {% if cart.item_count == 0 %}hidden-count{% endif %}">{{ cart.item_count }}</span></a>
-            <div class="inner-cart-info">
-              {% include 'mini-cart' %}
-            </div>
-          </li>
-        {% endif %}
-      </ul>
-    </div>
+        </div>
+      </div>
+  </div>
   </div>
 </div>
-<div class="header">
-  {% include 'header-top-black' %}
-  <div class="container">
-    
-    <a  title="{{ shop.name }}" alt="{{ shop.name }}" href="/" class="jvlogo" rel="home">
-      <span class="logo-table">
-        <span class="logo-table-cell">
-          <img src="{{ 'logo-1.png' | asset_url }}" alt="{{ shop.name }}"  >
-        </span>
-      </span>
-    </a>
-    {% include 'nav' class: 'dropdownMenu mainmenu ', handle: 'main-menu' %}
-    <div class="mobile-menu">
-      <a href="#" class="show-menu"><span class="lnr lnr-indent-decrease"></span></a>
-      <a href="#" class="hide-menu"><span class="lnr lnr-indent-increase"></span></a>
-    </div>
-    <div class="info-header info-header2 TTT">
-      <ul class="info-total">
-        <li class="info-search">
-          <a href="#" class="info-icon icon-search"><span class="lnr lnr-magnifier"></span></a>
-          {% include 'search-bar' %}
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
+
 <!-- End Header -->
+<!-- same for header 6 -->

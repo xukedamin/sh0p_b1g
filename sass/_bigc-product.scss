@@ -11,7 +11,7 @@
     display: block;
     height: 100%;
     position: relative;
-    text-align: center;
+    @extend %text-center;
     width: 100%;
     z-index: 9;
   }
@@ -65,7 +65,7 @@
   a {
     color: $color_shark;
     text-shadow: 0 0 0;
-    text-transform: uppercase;
+    @extend %text-up;
 
     &:hover {
       color: $color_dusty-gray;
@@ -74,7 +74,7 @@
 }
 .item-product-info {
   margin-top: 27px;
-  text-align: center;
+  @extend %text-center;
 
   .desc {
     color: $color_dove-gray;
@@ -151,13 +151,13 @@
   // a, 
   .action {
     background: $color_white none repeat scroll 0 0;
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     color: $color_shark;
     display: inline-block;
     height: 40px;
     margin: auto;
     position: absolute;
-    text-align: center;
+    @extend %text-center;
     width: 40px;
     z-index: 99;
     @extend %jv-transition-easeout;
@@ -202,7 +202,7 @@
     padding-left: 25px;
     padding-top: 7px;
     right: -25px;
-    text-align: left;
+    @extend %text-left;
     width: 80px;
   }
   .product-add-cart span {
@@ -217,7 +217,7 @@
   .item-product-info {
     left: 70px;
     position: absolute;
-    text-align: left;
+    @extend %text-left;
     top: 0;
   }
   .info-price  span {
@@ -232,7 +232,7 @@
     display: block;
     margin-top: 10px;
     text-decoration: underline;
-    text-transform: uppercase;
+    @extend %text-up;
 
     &:hover {
       color: $color_dusty-gray;
@@ -270,14 +270,14 @@
   top: 0;
 
   span {
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     color: $color_white;
     display: inline-block;
     height: 44px;
     line-height: 44px;
     margin-left: 7px;
     margin-top: 10px;
-    text-align: center;
+    @extend %text-center;
     width: 44px;
     @extend %jv-transition-easeout;
     opacity: 1;
@@ -318,7 +318,7 @@
     bottom: 0;
     position: absolute;
     right: 0;
-    text-align: center;
+    @extend %text-center;
     @extend %jv-transition-easeout;
     width: 130px;
   }
@@ -439,7 +439,7 @@
     margin-bottom: 0;
 
     a {
-      text-transform: uppercase;
+      @extend %text-up;
     }
   }
 }
@@ -541,7 +541,7 @@
   font-size: 30px;
   margin-bottom: 15px;
   margin-top: 0;
-  text-transform: uppercase;
+  @extend %text-up;
 }
 .wrap-star-rating {
   background: transparent url('{{ "rate-bg.png" | asset_url }}') repeat-x scroll left top;
@@ -602,12 +602,12 @@
   &.attr-size {
     margin-top: 20px;
     position: relative;
-    text-transform: uppercase;
+    @extend %text-up;
   }
   label {
     font-weight: 400;
     margin: 0;
-    text-transform: uppercase;
+    @extend %text-up;
   }
   &.attr-color {
     display: table;
@@ -659,6 +659,8 @@
     }
   }
 }
+
+//add to cart qty
 .info-qty {
   border: 1px solid $color_mercury;
   height: 40px;
@@ -668,8 +670,9 @@
 
   > label {
     font-weight: 400;
-    margin: 0 40px 0 0;
-    text-transform: uppercase;
+    // margin: 0 40px 0 0;
+    padding-right: 10px;
+    @extend %text-up;
   }
   a {
     color: #b8b8b8;
@@ -681,7 +684,7 @@
 }
 .qty-val {
   display: inline-block;
-  text-align: center;
+  @extend %text-center;
   width: 60px;
 }
 .wrap-cart-qty .btn-link-default.add-to-cart {

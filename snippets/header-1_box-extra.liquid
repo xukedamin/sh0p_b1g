@@ -1,54 +1,23 @@
 <div class="home-box-extra">
+  {% if settings.show_header_cart %}
   <div class="home-cart-box">
     <a href="#" class="icon-extra-sub icon-home-cart">
       <span class="lnr lnr-cart"></span>
-      <sup>0</sup>
+      <sup class="number-cart-total cart-count {% if cart.item_count == 0 %}hidden-count{% endif %}">{{ cart.item_count }}</sup>
     </a>
+
     <div class="home-extra-sub">
       <a href="#" class="close-extra-sub">Close</a>
+   <!--    <a href="/cart" class="mycart-link">
+        <span class="lnr-cart"></span> {{ 'cart.general.mycart' | t }}  
+      </a> -->
       <div class="inner-cart-info">
-        <ul class="info-list-cart">
-          <li class="item-info-cart">
-            <div class="cart-thumb">
-              <a href="#" class="cart-thumb">
-                <img src="https://cdn.shopify.com/s/files/1/1184/2838/files/photos_png_820_1.png" alt="" />
-              </a>
-            </div>
-            <div class="wrap-cart-title">
-              <h3 class="cart-title"><a href="#">Birch Lane Merriweather</a></h3>
-              <div class="cart-qty"><label>Qty:</label> <span>1</span></div>
-            </div>
-            <div class="wrap-cart-remove">
-              <a href="#" class="remove-product"></a>
-              <span class="cart-price">$49.99</span>
-            </div>
-          </li>
-          <li class="item-info-cart">
-            <div class="cart-thumb">
-              <a href="#">
-                <img src="https://cdn.shopify.com/s/files/1/1184/2838/files/photos_png_820_3.png" alt="" />
-              </a>
-            </div>
-            <div class="wrap-cart-title">
-              <h3 class="cart-title"><a href="#">Light Wall Sconce</a></h3>
-              <div class="cart-qty"><label>Qty:</label> <span>1</span></div>
-            </div>
-            <div class="wrap-cart-remove">
-              <a href="#" class="remove-product"></a>
-              <span class="cart-price">$23.00</span>
-            </div>
-          </li>
-        </ul>
-        <div class="total-cart">
-          <label>Subtotal</label> <span>$72.99</span>
-        </div>
-        <div class="link-cart">
-          <a href="#" class="cart-edit">edit cart</a>
-          <a href="#" class="cart-checkout">checkout</a>
-        </div>
+        {% include 'mini-cart' %}
       </div>
     </div>
-  </div>
+  </div><!-- home-cart-box -->
+  {% endif %}
+
   <div class="home-share-box">
     <a href="#" class="icon-extra-sub icon-home-share">
       <span class="lnr lnr-bullhorn"></span>
@@ -69,11 +38,9 @@
     </a>
     <div class="home-extra-sub">
       <a href="#" class="close-extra-sub">Close</a>
+      <div class="home-search-form">
        {% include 'search-bar' %}
-      <form class="home-search-form">
-        <input type="text" onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''" value="Search store" />
-        <input type="submit" value="Search" class="btn-link-default">
-      </form>
+      </div>
     </div>
   </div>
 </div>

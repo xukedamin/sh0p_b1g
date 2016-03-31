@@ -19,9 +19,7 @@
   .owl-theme .owl-controls .owl-page {
     span {
       background: $color_dove-gray none repeat scroll 0 0;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
+      @extend %jv-border-radius-50;
       display: block;
       height: 7px;
       margin: 4px;
@@ -40,7 +38,7 @@
   left: 100px;
   opacity: 0;
   position: absolute;
-  text-align: left;
+  @extend %text-left;
   top: 0;
   visibility: hidden;
   width: 400px;
@@ -60,8 +58,8 @@
   display: block;
   font-size: 16px;
   position: relative;
-  text-align: right;
-  text-transform: uppercase;
+  @extend %text-right;
+  @extend %text-up;
   padding-right: 36px;
 
   &:after {
@@ -88,7 +86,8 @@
       color: $color_dusty-gray;
     }
   }
- .cart-thumb {
+
+  a.cart-thumb {
     background: $color_white none repeat scroll 0 0;
   }
   .item-info-cart {
@@ -98,7 +97,8 @@
     border-top: 1px solid rgba($color_white, 0.1);
     color: $color_white;
   }
-  .link-cart a {
+  .link-cart a, 
+  .link-cart button {
     background: $color_white;
     color: $color_shark;
 
@@ -138,7 +138,8 @@
   margin-top: 35px;
   padding-top: 20px;
 
-  > input[type="text"] {
+  input[type="text"],
+  input[type="search"]  {
     border: medium none;
     color: $color_dusty-gray;
     height: 50px;
@@ -169,7 +170,7 @@
     height: 100px;
     opacity: 1;
     position: relative;
-    text-align: right;
+    @extend %text-right;
     visibility: visible;
     width: 100px;
     @extend %jv-transition-easeout;
@@ -264,7 +265,7 @@
   overflow: hidden;
   padding: 18px 120px 18px 20px;
   position: absolute;
-  text-transform: uppercase;
+  @extend %text-up;
   top: 50%;
   @extend %jv-transition-easeout;
 
@@ -322,7 +323,7 @@
     font-size: 30px;
     font-weight: bold;
     margin: 0 0 25px;
-    text-transform: uppercase;
+    @extend %text-up;
   }
 
   .close-category-lightbox {
@@ -330,7 +331,7 @@
     padding-right: 30px;
     position: absolute;
     right: 30px;
-    text-transform: uppercase;
+    @extend %text-up;
     top: 30px;
 
       &:after {
@@ -435,14 +436,14 @@
   .ui-slider-handle.ui-state-default.ui-corner-all {
     background: $color_white none repeat scroll 0 0;
     border: 1px solid $color_mine-shaft;
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     cursor: pointer;
     display: inline-block;
     height: 36px;
     margin: 0 -18px;
     opacity: 1;
     position: relative;
-    text-align: center;
+    @extend %text-center;
     top: -14px;
     width: 36px;
   }
@@ -460,7 +461,7 @@
     font-size: 13px;
     margin: 0 0 10px;
     text-shadow: 0 0 0;
-    text-transform: uppercase;
+    @extend %text-up;
   }
   .desc {
     margin-top: 13px;
@@ -520,7 +521,7 @@
     height: 20px;
     position: absolute;
     right: 0;
-    text-align: center;
+    @extend %text-center;
     top: 0;
     width: 20px;
 
@@ -538,7 +539,7 @@
     width: 20px;
     bottom: 0;
     border-left: 1px solid $color_mercury;
-    text-align: center;
+    @extend %text-center;
 
     span {
       font-size: 6px;
@@ -573,9 +574,7 @@
   }
 }
 
-.home-featured-product {
-    margin-top: 90px;
-}
+
 
 .title.title-home {
     margin-bottom: 45px;
@@ -629,8 +628,15 @@
 .partner-slider.home-partner-slider {
     margin-bottom: 70px;
 }
-.home-featured-product .home-directnav .owl-buttons {
-    margin-top: -103px;
+
+//home featured product 
+
+.home-featured-product {
+    margin-top: 90px;
+  
+  .home-directnav .owl-buttons {
+      margin-top: -103px;
+  }
 }
 
 
@@ -654,11 +660,11 @@
   }
   .owl-theme .owl-controls .owl-page {
     border: 1px solid $color_mine-shaft;
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     display: inline-block;
     height: 36px;
     margin: 0 25px 0 0;
-    text-align: center;
+    @extend %text-center;
     width: 36px;
     opacity: 0;
     background: $color_white;

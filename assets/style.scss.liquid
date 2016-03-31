@@ -259,10 +259,15 @@ $max: max-width;
 #Dropdown Menu
 ==============================================================================*/
 
-/*setting*/
-{% if settings.mega_sub_family == '0' %}
-  {% assign settings.mega_sub_family = inherit %}
-{% endif %}
+.dropdownMenu > li > a {
+  font-family: {{ settings.mega_main_family }};
+}
+
+.dropdownMenu li ul li a{
+    {% if settings.mega_sub_family != '0' %}
+      font-family: {{ settings.mega_sub_family }};
+    {% endif %}
+}
 
 
 /***********************************************************************

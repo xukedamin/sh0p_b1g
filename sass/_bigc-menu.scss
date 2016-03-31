@@ -4,7 +4,7 @@ $menu__font-size: #{'{{ settings.mega_main_size }}px'};
 $menu__padding : #{'{{ settings.mega_main_padding }}px'};
 $menu__main-color: #{'{{ settings.mega_main_color }}'};
 $menu__font-weight :  #{'{{ settings.mega_main_weight }}'};
-$menu__font-family: '{{ settings.mega_main_family }}'; 
+
 $menu__height: #{'{{ settings.header_height }}px'};
 
 $menu__sub__background-color: #{'{{ settings.mega_sub_bg_color }}'};
@@ -31,8 +31,8 @@ $menu__sub__font-size: #{'{{ settings.mega_sub_size }}px'} ;
 
     & > a {
       font-size: $menu__font-size;
-      font-family: $menu__font-family;
-      text-transform: uppercase;
+      // font-family: $menu__font-family;
+      @extend %text-up;
       padding: 0 $menu__padding;
       color: $menu__main-color;
       display: block;
@@ -64,8 +64,6 @@ $menu__sub__font-size: #{'{{ settings.mega_sub_size }}px'} ;
       &> a:after {
         content: "\f107";
         @extend %jv-font-Awesome;
-        // font-family: fontawesome !important;
-        // font-weight: normal;
         position: absolute;
         top: 0;
         right: 8px;
@@ -90,16 +88,14 @@ $menu__sub__font-size: #{'{{ settings.mega_sub_size }}px'} ;
 
       li {
         & + li {
-          border-top: 1px solid $color_mercury;
+          // border-top: 1px solid $color_mercury;
         }
         &.sub-menu {
           &  > a:after {
             content: "\f107";
             display: inline-block;
             @extend %jv-font-Awesome;
-            // font-family: fontawesome !important;
-            // font-style: normal;
-            // font-weight: normal;
+         
             margin-top: -10px;
             position: absolute;
             right: 10px;
@@ -107,25 +103,24 @@ $menu__sub__font-size: #{'{{ settings.mega_sub_size }}px'} ;
           }
         }
         a {
-          // font-family: $menu__sub__font-family;
           padding: $menu__sub__padding;
           color: $menu__sub__color;
           font-weight: $menu__sub__font-weight;
           font-size: $menu__sub__font-size;
           display: block;
-          text-transform: uppercase;
+          @extend %text-up;
           position: relative;
           text-transform: capitalize;
 
           span {
-            display: block;
+            // display: block;
           }
         }
 
         &[class*="active"], 
         &:hover {
           & > a {
-            color: $colorPrimary;
+            // color: $colorPrimary;
           }
         }
         &:hover > ul {
@@ -221,7 +216,7 @@ $menu__sub__font-size: #{'{{ settings.mega_sub_size }}px'} ;
           }
         }
         a {
-          text-align: right;
+          // @extend %text-right;
         }
         &:hover > ul {
           @include translateName(slideInLeft-30);
@@ -234,11 +229,21 @@ $menu__sub__font-size: #{'{{ settings.mega_sub_size }}px'} ;
   }
 }
 
-ul.dropdownMenu__ li:nth-child(3) > ul { display:block}
+ul.dropdownMenu__ li:nth-child(3) > ul { display:block;}
+
+//HOME 4
+.main-menu.dropdownMenu > li{
+  float: none;
+}
+.main-menu.dropdownMenu>li>a{
+  height: auto;
+  line-height: auto;
+  padding: 0;
+}
+
+
 
 // main nav
-
-
 .mobile-menu {
   border: 1px solid $color_mercury;
   display: block;
@@ -295,6 +300,7 @@ ul.dropdownMenu__ li:nth-child(3) > ul { display:block}
         &:after {
           background: $color_white none repeat scroll 0 0;
           color: $color_mercury;
+          content: "\e873";
           font-size: 13px;
           left: 50%;
           margin-left: -5px;
@@ -315,7 +321,7 @@ ul.dropdownMenu__ li:nth-child(3) > ul { display:block}
         display: block;
         position: relative;
         text-shadow: 0 0 0;
-        text-transform: uppercase;
+        @extend %text-up;
 
         line-height: normal;
 

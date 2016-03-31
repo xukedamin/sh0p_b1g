@@ -43,7 +43,7 @@
 }
 
 .about-box-text {
-  text-align: center;
+  @extend %text-center;
   padding-top: 55px;
   height: 292px;
 
@@ -87,7 +87,7 @@
   left: 65px;
   line-height: 60px;
   position: absolute;
-  text-align: center;
+  @extend %text-center;
   top: 80px;
   width: 200px;
 }
@@ -99,8 +99,7 @@
 
   &:hover {
     img {
-      // transform: scale(1.15);
-      @include prefix(transform, scale(1.15));
+      @extend %jv-transform-scale-115;
     }
 
   }
@@ -114,7 +113,7 @@
   line-height: 60px;
   position: absolute;
   right: 30px;
-  text-align: center;
+  @extend %text-center;
   width: 120px;
 }
 
@@ -178,7 +177,6 @@
   .owl-theme .owl-controls .owl-buttons {
     div {
       background: $color_white none repeat scroll 0 0;
-      border-radius: 50%;
       color: $color_mine-shaft;
       display: block;
       font-size: 12px;
@@ -187,9 +185,10 @@
       opacity: 1;
       padding: 0;
       position: absolute;
-      text-align: center;
       top: 100px;
       width: 36px;
+      @extend %text-center;
+      @extend %jv-border-radius-50;
       @extend %jv-transition-easeout;
 
       i {
@@ -207,13 +206,13 @@
     .owl-prev {
       left: 0;
       margin-left: -35px;
-      box-shadow: -1px 3px 3px -1px rgba(0, 0, 0, 0.2);
+      box-shadow: -1px 3px 3px -1px rgba($color_black, 0.2);
     }
 
     .owl-next {
       right: 0;
       margin-right: -35px;
-      box-shadow: -1px 3px 3px -1px rgba(0, 0, 0, 0.2);
+      box-shadow: -1px 3px 3px -1px rgba($color_black, 0.2);
     }
 
   }
@@ -234,7 +233,8 @@
 
   &:hover {
     img {
-      transform: scale(1.15);
+      
+       @extend %jv-transform-scale-115;
     }
 
   }
@@ -255,12 +255,12 @@
 .post-social-network {
   a {
     background: $color_wild-sand none repeat scroll 0 0;
-    border-radius: 50%;
     color: $color_dove-gray;
     display: block;
     height: 33px;
-    text-align: center;
     width: 33px;
+    @extend %jv-border-radius-50;
+    @extend %text-center;
 
     &:hover {
       background: $color_currious-blue-darker none repeat scroll 0 0;
@@ -285,13 +285,13 @@
   width: 70px;
 
   > a {
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     display: block;
     overflow: hidden;
   }
 
   img {
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     @extend %jv-transition-easeout;
     width: 100%;
   }
@@ -307,7 +307,7 @@
 
   &:before {
     color: $color_silver-darker;
-    font-family: fontawesome;
+    @extend %jv-font-Awesome;
     left: 20px;
     position: absolute;
     top: 5px;

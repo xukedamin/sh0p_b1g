@@ -15,35 +15,15 @@
 						</div>
 					</div>
 					<div class="currency-box">
-						<!-- <a href="#" class="currency-link">$ USD</a>
-						<div class="currency-inner-box item-box-sub">
-							<ul>
-								<li><a href="#">Dollar</a></li>
-								<li><a href="#">Franch</a></li>
-								<li><a href="#">Mark</a></li>
-								<li><a href="#">Lira</a></li>
-							</ul>
-						</div> -->
-						<a href="#" class="currency-link">{{ 'layout.header.currency' | t }} {{ 'settings.default_currency' }} </a>
+						<a href="#" class="currency-link">{{ 'layout.header.currency' | t }} {{ settings.default_currency }} </a>
 							<div class="currency-inner-box item-box-sub">
-								 <ul class="list-inline pull-right">
+								 <!-- <ul class="list-inline pull-right"> -->
 					        {% if settings.show_multiple_currencies %}
-					          <li>
+					          <!-- <li> -->
 					            {% include 'currency-picker' %}
-					          </li>
+					          <!-- </li> -->
 					        {% endif %}
-					       
-
-					        {% if settings.show_header_cart %}
-					          <li class="info-cart">
-					            <a href="#" class="mycart-link ">
-					            	<span class="lnr-cart"></span> {{ 'cart.general.mycart' | t }}  <span class="number-cart-total cart-count {% if cart.item_count == 0 %}hidden-count{% endif %}">{{ cart.item_count }}</span>
-					            </a>
-					            <div class="inner-cart-info">
-					              {% include 'mini-cart' %}
-					            </div>
-					          </li>
-					        {% endif %}
+					   
 					      </ul>
 				      </div><!-- currency-inner-box item-box-sub -->
 					</div><!-- currency-box -->
@@ -53,19 +33,13 @@
 				<div class="top-right">
 					<ul class="list-inline">
 						<li class="info-user">
-						<!-- <a href="#" class="account-link"><span class="lnr lnr-user"></span> My Account</a> -->
-							<!-- <ul class="list-unstyled inner-user-info">
-								<li><a href="#"><span class="lnr lnr-lock"></span> Login / Register</a></li>
-								<li><a href="#"><span class="lnr lnr-heart"></span> Wishlist</a></li>
-								<li><a href="#"><span class="lnr lnr-sync"></span> Compare</a></li>
-								<li><a href="#"><span class="lnr lnr-exit"></span> Checkout</a></li>
-							</ul> -->
+
 
 							{% if shop.customer_accounts_enabled %}
 			          {% if customer %}
-			            <ul class="dropdownMenu pull-right subrtl">
+			            <ul class="dropdownMenu subrtl">
 			              <li>
-			                <a class="account-link" href="/account" data-toggle="tooltip" title="{{ first_name.first_name }} " >
+			                <a class="top-header__menu-title account-link" href="/account" data-toggle="tooltip" title="{{ first_name.first_name }} " >
 			                  <span class="lnr lnr-user"></span> {{ 'layout.customer.my_account' | t }}
 			                </a>
 			                <ul class="hidden-xs inner-user-info">
@@ -78,7 +52,7 @@
 			          {% else %}
 			            <ul class="dropdownMenu pull-right subrtl ">
 			              <li> 
-			              	<a href="/account/login" class="account-link">
+			              	<a href="/account/login" class="top-header__menu-title account-link">
 			                <span class="lnr lnr-user"></span> {{ 'layout.customer.my_account' | t }}
 			              </a>
 			              <ul class="hidden-xs inner-user-info">
@@ -96,41 +70,21 @@
 			      {% endif %}
 
 						</li>
-						<li><a href="#" class="wishlist-link"><span class="lnr lnr-heart"></span> wishlist</a></li>
-						<li><a href="#" class="checkout-link"><span class="lnr lnr-thumbs-up"></span> Checkout </a></li>
+						<li><a href="#" class="top-header__menu-title wishlist-link"><span class="lnr lnr-heart"></span> wishlist</a></li>
+						{% if settings.show_header_cart %}
+						<li class="info-cart">
+		            <a href="#" class="top-header__menu-title mycart-link ">
+		            	<span class="lnr-cart"></span> {{ 'cart.general.mycart' | t }}  <span class="number-cart-total cart-count {% if cart.item_count == 0 %}hidden-count{% endif %}">{{ cart.item_count }}</span>
+		            </a>
+		            <div class="inner-cart-info">
+		              {% include 'mini-cart' %}
+		            </div>
+					        
+						</li>
+					    {% endif %}
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-<div class="top-header">
-    <div class="container">
-      <div class="top-left pull-left hidden-sm">
-        <ul>
-          {% if settings.hotline != blank %}
-            <li class="hotline">
-              <div class="text-title ">
-                {{ 'general.meta.hotline' | t }} <h5 class="color-main"> {{ settings.hotline }}</h5>
-              </div>
-            </li>
-          {% endif %}
-          
-          {% if settings.header_address != blank %}
-            <li class="header_address">
-              <div class="text-title ">
-                <i class="fa fa-map-marker"></i> {{ settings.header_address }}
-              </div>
-            </li>
-          {% endif %}
-          
-          {% if settings.skype != blank %}
-            <li class="header-skype">
-              <a href="skype:{{ settings.skype }}?chat"><i class="fa fa-skype"></i> {{ settings.skype }}</a>
-            </li>
-          {% endif %}
-        </ul>
-      </div>
-  </div>
 </div>

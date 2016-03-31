@@ -1,3 +1,86 @@
+.category-slider{
+
+}
+
+.item-collections .inner {
+  position: relative;
+  display: block;
+
+  .info-collections {
+    background-color: rgba($color_white, 0.5);
+    bottom: 10px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    
+    @extend %text-center;
+    .title {
+      font-size: 15px;
+      font-weight: 600;
+      display: block;
+      
+      @extend %text-up;
+    }
+  }
+}
+
+
+
+/*Home 2 Catalog*/
+
+.catalog {
+    background-attachment: fixed;
+    background-image: url('{{ "index2_bg-parallax.png" | asset_url }}');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: inherit;
+    padding: 75px 0;
+    margin-top: 15px;
+}
+
+.content-catelog {
+  color: $color_white;
+  padding-left: 45px;
+
+  > h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    @extend %text-up;
+  }
+  
+  ul li a {
+    color: $color_white;
+    font-style: italic;
+    padding: 0 0 0 30px;
+    position: relative;
+
+    &:before {
+      @extend %jv-font-Linearicons;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .download-catalog {
+    background: $color_white none repeat scroll 0 0;
+    color: $color_shark;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+    padding: 0 20px;
+    @extend %text-up;
+    @extend %jv-transition-easeout;
+
+    &:hover {
+      color: $color_white;
+      background: $color_shark;
+    }
+  }
+}
+
 /******************************************
 Page Grid
 *******************************************/
@@ -17,10 +100,11 @@ Page Grid
     height: 36px;
     line-height: 36px;
     padding: 0 20px 0 44px;
-    text-transform: uppercase;
+    @extend %text-up;
     cursor: pointer;
 
-    &.active {
+    &.active,
+    &.collection-view--active {
       color: $color_white;
       border: 1px solid $color_shark;
     }
@@ -52,7 +136,7 @@ Page Grid
     font-size: 13px;
     font-weight: 400;
     height: 36px;
-    text-transform: uppercase;
+    @extend %text-up;
     width: 130px !important;
 
     &:after {
@@ -82,7 +166,7 @@ Page Grid
     line-height: 36px;
     padding: 0 54px 0 20px;
     position: relative;
-    text-transform: uppercase;
+    @extend %text-up;
 
     &:after {
       @extend %jv-font-Linearicons;
@@ -175,7 +259,7 @@ Page Grid
       display: block;
       height: 36px;
       line-height: 36px;
-      text-align: center;
+      @extend %text-center;
       width: 36px;
       @extend %jv-transition-easeout;
     }
@@ -249,7 +333,7 @@ Page Grid Mr
 }
 
 .info-price-filter {
-  text-align: center;
+  @extend %text-center;
 
   label {
     color: $color_dove-gray;
@@ -321,7 +405,7 @@ Page Product List
 
 .product-list {
   .item-product-info {
-    text-align: left;
+    @extend %text-left;
   }
   .item-product {
       border: 1px solid $color_mercury;
@@ -370,7 +454,7 @@ Page Product List
   line-height: 40px;
   margin-top: 15px;
   padding: 0 30px;
-  text-transform: uppercase;
+  @extend %text-up;
   @extend %jv-transition-easeout;
 
   &:hover {

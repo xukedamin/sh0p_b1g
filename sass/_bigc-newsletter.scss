@@ -22,11 +22,11 @@
   font-weight: 700;
   margin: 0;
   padding: 13px 15px;
-  text-transform: uppercase;
+  @extend %text-up;
 }
 
 .newsletter-popup-thumb {
-  text-align: center;
+  @extend %text-center;
 }
 
 .content-popup {
@@ -37,7 +37,7 @@
 .newsletter-popup-info {
   > h3 {
     font-size: 16px;
-    text-transform: uppercase;
+    @extend %text-up;
   }
   > form {
     margin-top: 20px;
@@ -59,7 +59,7 @@
     height: 40px;
     margin-bottom: 10px;
     padding: 0 30px;
-    text-transform: uppercase;
+    @extend %text-up;
 
     &:hover {
       background: $color_shark;
@@ -92,7 +92,7 @@
     font-weight: 400;
     margin-right: 20px;
     padding-right: 20px;
-    text-transform: uppercase;
+    @extend %text-up;
     vertical-align: middle;
   }
 }
@@ -122,12 +122,12 @@
   padding: 35px 0;
 }
 .newsletter-form {
-  text-align: center;
+  @extend %text-center;
 
   label {
     font-weight: 400;
     margin-right: 25px;
-    text-transform: uppercase;
+    @extend %text-up;
   }
   input[type="text"] {
     border: 1px solid $color_currious-blue-darker;
@@ -146,7 +146,7 @@
     color: $color_white;
     height: 40px;
     padding: 0 25px;
-    text-transform: uppercase;
+    @extend %text-up;
     margin: 5px 0;
     @extend %jv-transition-easeout;
 

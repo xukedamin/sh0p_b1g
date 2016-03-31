@@ -7,7 +7,7 @@
 .item-brand {
   margin: 0 -15px;
   position: relative;
-  text-align: center;
+  @extend %text-center;
 
   @include p-el(before, 100%, 40px) {
     background-image: url('{{ "bg-product-2.png" | asset_url }}');

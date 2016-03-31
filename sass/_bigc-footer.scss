@@ -111,7 +111,7 @@
   }
 }
 .footer-dark .copyright {
-  text-align: right;
+  @extend %text-right;
 }
 #footer .copyright a:hover {
   color: $color_dusty-gray;
@@ -155,7 +155,7 @@
   > a {
     color: $color_currious-blue-darker;
     font-size: 30px;
-    text-transform: uppercase;
+    @extend %text-up;
   }
   h1 {
     font-size: 48px;
@@ -174,7 +174,7 @@
   > h2 {
     font-size: 16px;
     margin: 15px 0 25px;
-    text-transform: uppercase;
+    @extend %text-up;
   }
   a {
     color: $color_dove-gray;
@@ -232,7 +232,7 @@
 
 .copyright3 > p {
     margin: 0;
-    text-align: right;
+    @extend %text-right;
 }
 
 .footer-3 {

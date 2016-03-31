@@ -17,7 +17,7 @@
     .item-product-info {
       margin: 25px 0 0;
       padding: 0;
-      text-align: center;
+      @extend %text-center;
     }
     .title-product a {
       text-transform: capitalize;
@@ -38,17 +38,26 @@
   padding-left: 30px;
   width: 220px;
 
-  input[type="text"] {
+  input[type="text"],
+  input[type="search"] {
     border: medium none;
     color: $color_dusty-gray;
     max-width: 165px;
   }
-  input[type="submit"] {
+
+  input[type="submit"],
+  button[type="submit"] {
     background: url('{{ "icon-search.png" | asset_url }}') no-repeat center center;
     border: medium none;
     display: inline-block;
     height: 16px;
     width: 16px;
+    
+    &.btn-link-default{
+      line-height: 16px;
+      text-indent: -9999px;
+      padding: 0;
+    }
   }
   > form {
     padding-top: 15px;
@@ -63,12 +72,12 @@
     color: $color_white;
     display: inline-block;
     height: 40px;
-    text-align: center;
+    @extend %text-center;
     vertical-align: top;
     width: 100px;
     @extend %jv-transition-easeout;
     line-height: 40px;
-    text-transform: uppercase;
+    @extend %text-up;
   }
 }
 
@@ -81,12 +90,12 @@
 
   .info-icon.icon-cart {
     background: $color_currious-blue-darker none repeat scroll 0 0;
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     color: $color_white;
     display: block;
     height: 56px;
     position: relative;
-    text-align: center;
+    @extend %text-center;
     width: 56px;
 
     span {
@@ -281,7 +290,7 @@
     height: 20px;
     line-height: 18px;
     padding: 0;
-    text-align: center;
+    @extend %text-center;
     width: 40px;
   }
   .attr-brand a {
@@ -312,7 +321,7 @@
   .ui-slider-handle.ui-state-default.ui-corner-all {
     background: $color_danube none repeat scroll 0 0;
     border: medium none;
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     height: 10px;
     margin: 0 0 0 -5px;
     top: -4px;

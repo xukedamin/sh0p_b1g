@@ -1,7 +1,7 @@
 // _myaccount.scss
 /* Page Login */
 .page-login-wrapper .page-login {
-  text-align: center;
+  @extend %text-center;
 }
 .page-login-wrapper .page-login .back-to-home {
   color: $color_white;
@@ -43,7 +43,7 @@
 }
 .page-login-wrapper .page-login .remember {
   margin-bottom: 25px;
-  text-align: right;
+  @extend %text-right;
 }
 .page-login-wrapper .page-login .remember .checkbox {
   display: inline-block;
@@ -162,7 +162,7 @@
   max-width: 570px;
 }
 .page-register form .button {
-  text-align: center;
+  @extend %text-center;
 }
 .page-register form .name {
   position: relative;
@@ -194,7 +194,7 @@
 }
 .page-register form h3 {
   margin-bottom: 50px;
-  text-align: center;
+  @extend %text-center;
 }
 .page-register form input:not([type="submit"]) {
   margin-bottom: 20px;
@@ -206,7 +206,7 @@
   letter-spacing: 0.05em;
   margin-bottom: 5px;
   font-size: 11px;
-  text-transform: uppercase;
+  @extend %text-up;
 }
 .page-register form span {
   font-style: italic;

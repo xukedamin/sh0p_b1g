@@ -13,7 +13,7 @@
     left: 0;
     padding-left: 30px;
     position: absolute;
-    text-align: center;
+    @extend %text-center;
     width: 100%;
 
     a {
@@ -26,7 +26,7 @@
       margin: 0 1px 0 0;
       padding: 15px;
       position: relative;
-      text-transform: uppercase;
+      @extend %text-up;
       @extend %jv-transition-easeout;
       width: 370px;
 
@@ -55,7 +55,7 @@
   .owl-theme .owl-controls .owl-page {
     span {
       background: $color_silver-darker none repeat scroll 0 0;
-      border-radius: 50%;
+      @extend %jv-border-radius-50;
       display: block;
       height: 7px;
       margin: 4px;
@@ -85,6 +85,7 @@
 .partner-slider-paginav.style1 .wrap-item{
 	margin-top: 30px;
 }
+
 .the-brand .owl-theme .owl-controls .owl-buttons {
   div {
       border-radius: 0;
@@ -263,7 +264,7 @@
 
       span {
         background: $color_shark none repeat scroll 0 0;
-        border-radius: 50%;
+        @extend %jv-border-radius-50;
         display: block;
         height: 6px;
         margin: 4px 0;
@@ -316,7 +317,7 @@
 }
 
 .banner-rect-info {
-  text-transform: uppercase;
+  @extend %text-up;
 
   h4 {
     font-size: 30px;
@@ -367,7 +368,7 @@
   }
   .banner-thumb-link {
     display: block;
-    text-align: center;
+    @extend %text-center;
   }
   .banner-rect-info {
     margin-top: 100px;
@@ -414,7 +415,7 @@
       }
       span {
         background: $color_shark none repeat scroll 0 0;
-        border-radius: 50%;
+        @extend %jv-border-radius-50;
         display: block;
         height: 10px;
         margin: 0;
@@ -434,6 +435,81 @@
   }
 }
 
+//from home2_
+
+.owl-arrow-banner .owl-theme .owl-controls .owl-buttons div {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid $color_shark;
+  color: $color_shark;
+  background: $color_white;
+  display: inline-block;
+  font-size: 10px;
+  height: 34px;
+  margin: -17px 0 0;
+  opacity: 1;
+  padding: 10px;
+  width: 34px;
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  // border-radius: 0;
+  @extend %jv-transition-easeout;
+  @extend %jv-border-radius-0;
+
+  &:hover {
+    border-color: $color_casablanca;
+    color: $color_casablanca;
+  }
+}
+
+.banner-slider {
+  .owl-theme .owl-controls .owl-buttons div {
+    .owl-prev {
+      left: 15px;
+    }
+    .owl-next {
+      right: 15px;
+    }
+  }
+  &:hover .owl-theme .owl-controls .owl-buttons div {
+    opacity: 1;
+  }
+}
+
+
+.banner-info {
+  height: 220px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  // transform: translateY(-50%);
+  // -webkit-transform: translateY(-50%);
+  @include prefix(transform, translateY(-50%));
+
+  z-index: 5;
+}
+
+.banner-info-text {
+  color: $color_white;
+  padding-left: 50px;
+  @extend %text-up;
+
+  h4 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 1px 1px 3px $color_gray;
+  }
+  > h2 {
+    font-size: 60px;
+    margin: 0;
+    text-shadow: 1px 1px 3px $color_gray;
+  }
+  .btn-link-default.banner-link {
+    margin-top: 45px;
+  }
+}
 
 // .banner-slider-circle-hoztical .owl-theme .owl-controls .owl-page .owl-page.active span
 

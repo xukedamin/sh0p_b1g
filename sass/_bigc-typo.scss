@@ -44,7 +44,7 @@
   background: $color_wild-sand none repeat scroll 0 0;
   margin-bottom: 100px;
   padding: 70px 0 40px;
-  text-align: center;
+  @extend %text-center;
 
   .title {
     margin-bottom: 7px;
@@ -88,7 +88,7 @@
 
 .box-intro {
   margin-bottom: 30px;
-  text-align: center;
+  @extend %text-center;
 
   h2 {
     margin: 0;

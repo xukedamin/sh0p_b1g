@@ -13,24 +13,13 @@
     position: absolute;
     right: 0;
     top: 100%;
-    z-index: 9;
+    z-index: 99;
     opacity: 0;
     visibility: hidden;
 
-    // box-shadow: -1px 3px 5px -1px rgba($color_black, 0.1);
     @include prefix(box-shadow, -1px 3px 5px -1px rgba($color_black, 0.1));
     @extend %jv-transition-easeout;
 
-    input[type="search"] {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      color: $color_dusty-gray;
-      padding: 0 15px;
-      border: medium none;
-    }
   }
   &:hover {
     .search-form {
@@ -67,6 +56,18 @@
     @include prefix(transform, rotate(135deg));
     @extend %jv-transition-easeout;
   }
+}
+
+.search-form input[type="text"],
+.search-form input[type="search"] {
+    border: medium none;
+    color: $color_dusty-gray;
+    height: 100%;
+    left: 0;
+    padding: 0 15px 0 50px;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 .wrap-toggle-search {

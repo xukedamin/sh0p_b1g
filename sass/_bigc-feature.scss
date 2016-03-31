@@ -22,7 +22,7 @@
     filter: blur(5px);
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
-    // transform: scale(1.15);
+    
     @extend %jv-transform-scale-115;
   }
 
@@ -41,7 +41,7 @@
   padding: 45px 0;
   position: absolute;
   right: 0;
-  text-align: center;
+  @extend %text-center;
   top: 0;
   width: 100%;
 
@@ -56,13 +56,13 @@
   font-size: 16px;
   font-weight: 700;
   margin: 0;
-  text-transform: uppercase;
+  @extend %text-up;
 }
 .title {
   font-size: 30px;
   font-weight: 700;
   margin: 0;
-  text-transform: uppercase;
+  @extend %text-up;
 }
 
 
@@ -70,7 +70,7 @@
 
 .desc-title {
   color: $color_dusty-gray;
-  text-transform: uppercase;
+  @extend %text-up;
 }
 
 .leading-text-adv {
@@ -81,8 +81,8 @@
   margin: auto;
   position: absolute;
   right: 0;
-  text-align: center;
-  text-transform: uppercase;
+  @extend %text-center;
+  @extend %text-up;
   top: 0;
   width: 100%;
 }
@@ -94,8 +94,8 @@
   left: 100%;
   margin: 16px 0 0;
   position: absolute;
-  text-align: center;
-  text-transform: uppercase;
+  @extend %text-center;
+  @extend %text-up;
   width: 100%;
   opacity: 0;
   @extend %jv-transition-easeout;
@@ -111,7 +111,7 @@
     height: 40px;
     line-height: 40px;
     display: inline-block;
-    text-align: center;
+    @extend %text-center;
     right: 0;
     bottom: 0;
     @extend %jv-transition-easeout;
@@ -193,7 +193,7 @@
 .feature-box-link {
   display: block;
   height: 70px;
-  text-align: center;
+  @extend %text-center;
   width: 70px;
   border-radius: 4px;
   position: relative;
@@ -213,7 +213,7 @@
   }
   &.text-right .feature-box-info {
     padding: 0 30px 0 0;
-    text-align: right;
+    @extend %text-right;
   }
   &.text-center {
     display: block;
@@ -404,7 +404,7 @@
   width: 90px;
 
   > a {
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     color: $color_white;
     display: block;
     font-size: 30px;
@@ -412,7 +412,7 @@
     width: 70px;
     margin: 0 10px;
     position: relative;
-    text-align: center;
+    @extend %text-center;
     box-shadow: 0 0 0 10px transparent;
     @extend %jv-transition-easeout;
 

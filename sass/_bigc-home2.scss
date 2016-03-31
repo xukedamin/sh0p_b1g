@@ -2,7 +2,7 @@
             Home 2          
 ************************************************************************/
 .item-popular-info {
-  text-align: center;
+  @extend %text-center;
 
   > p {
     color: $color_dove-gray;
@@ -13,7 +13,7 @@
     a {
       color: $color_shark;
       font-size: 13px;
-      text-transform: uppercase;
+      @extend %text-up;
     }
     &:hover {
       color: $color_dove-gray;
@@ -74,7 +74,7 @@
   
   &:after {
     background: $color_white none repeat scroll 0 0;
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     bottom: -20px;
     color: $color_shark;
     display: block;
@@ -126,7 +126,7 @@
 
 .locator {
   margin-top: 80px;
-  text-align: center;
+  @extend %text-center;
   .title {
     margin-bottom: 20px;
   }

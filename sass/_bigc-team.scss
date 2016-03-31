@@ -64,11 +64,11 @@
   }
   a {
     background: $color_wild-sand none repeat scroll 0 0;
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     color: $color_dove-gray;
     display: block;
     height: 34px;
-    text-align: center;
+    @extend %text-center;
     width: 34px;
 
     @extend %jv-transition-easeout;
@@ -86,7 +86,7 @@
 }
 
 .team-cirle-image {
-  // border-radius: 50%;
+  
   @extend %jv-border-radius-50;
   @extend %jv-transition-easeout;
   width:100%;
@@ -94,7 +94,7 @@
 
 .team-circle-thumb {
   background: $color_shark none repeat scroll 0 0;
-  border-radius: 50%;
+  @extend %jv-border-radius-50;
   position: relative;
   cursor: pointer;
 
@@ -103,15 +103,12 @@
 
     .team-cirle-image {
       margin-left: 30px;
-      //transform: scale(0.5) translateX(100%) rotate(360deg);
-
       @include prefix(transform, scale(0.5) translateX(100%) rotate(360deg));
       
     }
     .info-circle-thumb {
       visibility: visible;
       opacity: 1;
-      // transform: scale(1);
       @extend %jv-transform-scale-1;
     }
   }
@@ -124,12 +121,11 @@
   left: 0;
   padding: 50px 50px 0;
   position: absolute;
-  text-align: center;
+  @extend %text-center;
   top: 0;
   visibility: hidden;
   width: 100%;
   opacity: 0;
-  // transform: scale(0);
   @extend %jv-transition-easeout;
   @extend %jv-transform-scale-0;
   
@@ -145,13 +141,13 @@
 
   a {
     background: $color_wild-sand none repeat scroll 0 0;
-    border-radius: 50%;
     color: $color_dove-gray;
     display: block;
     height: 34px;
-    text-align: center;
-    @extend %jv-transition-easeout;
+    @extend %text-center;
     width: 34px;
+    @extend %jv-transition-easeout;
+    @extend %jv-border-radius-50;
 
     &:hover {
       background: $color_golden-tainoi;
@@ -169,7 +165,7 @@
 }
 
 .team-circle-info {
-  text-align: center;
+  @extend %text-center;
 
   h3 a {
     color: $color_shark;
@@ -191,7 +187,7 @@
   border: 1px solid $color_mercury-darker;
   overflow: hidden;
   position: relative;
-  text-align: center;
+  @extend %text-center;
 
   .team-circle-info {
     background: $color_white none repeat scroll 0 0;

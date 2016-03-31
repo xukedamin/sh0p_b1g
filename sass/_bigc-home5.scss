@@ -3,13 +3,14 @@
 ************************************************************************/
 
 
-.inner-cart-info5.inner-cart-info .link-cart a {
-  background: $color_currious-blue-darker;
-  // border-radius: 6px;
-  @include prefix(border-radius, 6px);
+.inner-cart-info5.inner-cart-info .link-cart {
+   a, button {
+    background: $color_currious-blue-darker;
+    @include prefix(border-radius, 6px);
 
-  &:hover {
-    background: $color_bright-sun;
+    &:hover {
+      background: $color_bright-sun;
+    }
   }
 }
 
@@ -20,18 +21,19 @@
   }
   .owl-theme .owl-controls .owl-buttons div {
     background: transparent none repeat scroll 0 0;
-    border-radius: 50%;
     color: $color_dusty-gray;
     display: inline-block;
     height: 36px;
+    width: 36px;
     margin: -32px 0 0;
     opacity: 0;
     padding: 0;
     position: absolute;
-    text-align: center;
+    @extend %text-center;
     top: 50%;
+    @extend %jv-border-radius-50;
     @extend %jv-transition-easeout;
-    width: 36px;
+    
 
     &:hover {
       color: $color_white;
@@ -76,8 +78,8 @@
     margin: auto;
     position: absolute;
     right: 0;
-    text-align: center;
-    text-transform: uppercase;
+    @extend %text-center;
+    @extend %text-up;
     top: 0;
     width: 130px;
     opacity: 0;
@@ -90,7 +92,7 @@
   .item-product-info {
     margin: 0;
     padding: 25px;
-    text-align: left;
+    @extend %text-left;
 
     .desc {
       color: $color_dusty-gray;
@@ -101,7 +103,7 @@
 
     a {
       color: $color_shark;
-      text-transform: uppercase;
+      @extend %text-up;
 
       &:hover {
         color: $color_currious-blue-darker;

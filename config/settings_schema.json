@@ -288,6 +288,11 @@
         "id": "mega_main_family",
         "label": "Font family",
         "options": [
+         {
+            "value": "'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif"
+          },
           {
             "value": "'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, 'AppleGothic', sans-serif",
             "label": "Avant Garde",
@@ -349,7 +354,7 @@
             "group": "Serif"
           }
         ],
-        "default": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
+        "default": "'Open Sans', sans-serif"
       },
       {
         "type": "color",
@@ -1268,14 +1273,15 @@
       },
       {
         "type": "text",
-        "id": "header_address",
+        "id": "header_welcome",
         "label": "Text",
-        "default": "79098, London, Shekspie str. LTD"
+        "default": "Welcome to BigC Store"
       },
       {
         "type": "text",
-        "id": "hotline",
-        "label": "Hotline"
+        "id": "header_hotline",
+        "label": "Hotline",
+        "default":"Call Us: 0800 266 966"
       },
       {
         "type": "text",
@@ -1479,6 +1485,14 @@
           {
             "value": "5",
             "label": "Homepage 5"
+          },
+          {
+            "value": "6",
+            "label": "Homepage 6"
+          },
+          {
+            "value": "7",
+            "label": "Homepage 7"
           }
         ],
         "default": "1"

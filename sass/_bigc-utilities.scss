@@ -181,7 +181,9 @@ $max: max-width;
 %jv-border-radius-0{
   @include prefix(border-radius, 0);
 }
-
+%jv-border-radius-4{
+  @include prefix(border-radius, 4px);
+}
 
 %jv-font-Linearicons{
   font-family: Linearicons-Free;
@@ -190,6 +192,19 @@ $max: max-width;
   font-family: fontawesome;
   font-style: normal;
   font-weight: normal;
+}
+
+%text-up{
+  text-transform: uppercase;
+}
+%text-center{
+  text-align: center;
+}
+%text-left{
+  text-align: left;
+}
+%text-right{
+ text-align: right;
 }
 
 /*============================================================================
@@ -211,7 +226,7 @@ html, body {
 .glyphs.character-mapping li { margin: 0 30px 20px 0; display: inline-block; width: 90px }
 .glyphs.character-mapping .icon { margin: 10px 0 10px 15px; padding: 15px; position: relative; width: 55px; height: 55px; color: #162a36 !important; overflow: hidden; -webkit-border-radius: 3px; border-radius: 3px; font-size: 32px; }
 .glyphs.character-mapping .icon svg { fill: $color_black }
-.glyphs.character-mapping input { margin: 0; padding: 5px 0; line-height: 12px; font-size: 12px; display: block; width: 100%; border: 1px solid #d8e0e5; -webkit-border-radius: 5px; border-radius: 5px; text-align: center; outline: 0; }
+.glyphs.character-mapping input { margin: 0; padding: 5px 0; line-height: 12px; font-size: 12px; display: block; width: 100%; border: 1px solid #d8e0e5; -webkit-border-radius: 5px; border-radius: 5px; @extend %text-center; outline: 0; }
 .glyphs.character-mapping input:focus { border: 1px solid #fbde4a; -webkit-box-shadow: inset 0 0 3px #fbde4a; box-shadow: inset 0 0 3px #fbde4a }
 .glyphs.character-mapping input:hover { -webkit-box-shadow: inset 0 0 3px #fbde4a; box-shadow: inset 0 0 3px #fbde4a }
 .glyphs.css-mapping { color: rgba(0, 0, 0, 0.5); margin: 0 -5px; overflow: hidden; }
@@ -359,8 +374,10 @@ a:hover,a:focus{
     max-width: 1200px;
     width: 100%;
 }
-input,input:focus,input:hover{
-	outline:none;
+input,
+input:focus,
+input:hover {
+  outline: none;
 }
 p {
     line-height: 24px;
@@ -516,7 +533,22 @@ select option {
 .loading-ball{display:inline-block;width:50px;height:50px;position:relative;cursor:pointer}
 .loading-ball .ball{display:block;height:100%;border:5px solid $colorPrimary;border-radius:100%;margin:0 auto}
 .loading-ball .ball1{display:block;background-color:$color_white;opacity:.9;border-radius:50px;width:30px;height:30px;left:10px;position:absolute;top:10px;border:5px solid $colorPrimary;border-right-color:$color_white!important;border-bottom-color:$color_white!important}
-.loading-ball .ball2{background-color:$color_white;border-radius:100%;display:block;font-size:10px;top:3px;bottom:3px;right:3px;left:3px;line-height:44px;position:absolute;text-align:center;text-transform:uppercase}
+.loading-ball .ball2 {
+  background-color: $color_white;
+  border-radius: 100%;
+  display: block;
+  font-size: 10px;
+  top: 3px;
+  bottom: 3px;
+  right: 3px;
+  left: 3px;
+  line-height: 44px;
+  position: absolute;
+  // text-align: center;
+  // text-transform: uppercase;
+  @extend %text-center;
+  @extend %text-up;
+}
 .show-loading .loading-ball .ball{border-left-color:$color_white!important;border-top-color:$color_white!important;-moz-animation:spin .5s infinite linear;-webkit-animation:spin .5s infinite linear;-ms-animation:spin .5s infinite linear}
 .show-loading .loading-ball .ball1{opacity:1;-moz-animation:spinoff .5s infinite linear;-webkit-animation:spinoff .5s infinite linear;-ms-animation:spinoff .5s infinite linear}
 .show-loading .loading-ball .ball2{opacity:0}

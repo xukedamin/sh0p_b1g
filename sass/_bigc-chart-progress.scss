@@ -20,7 +20,7 @@
 	}
 }
 .circle2 {
-	border-radius: 50%;
+	@extend %jv-border-radius-50;
 	float: left;
 	height: 170px;
 	margin-right: 80px;
@@ -96,89 +96,89 @@
 		&.ui-progressbar {
 			height: 5px;
 			
-			@include prefix(border-radius,0);
+			@extend %jv-border-radius-0;
 
 			.ui-progressbar-value {
 				background: #fec942;
-				@include prefix(border-radius,0);
+				@extend %jv-border-radius-0;
 			}
 		}
 	}
 	#progressbar-2 {
 		&.ui-progressbar {
 			height: 5px;
-			@include prefix(border-radius,0);
+			@extend %jv-border-radius-0;
 
 			.ui-progressbar-value {
 				background: #2ea0d7;
-				@include prefix(border-radius,0);
+				@extend %jv-border-radius-0;
 			}
 		}
 	}
 	#progressbar-3 {
 		&.ui-progressbar {
 			height: 5px;
-			@include prefix(border-radius,0);
+			@extend %jv-border-radius-0;
 
 			.ui-progressbar-value {
 				background: $color_abbey;
-				@include prefix(border-radius,0);
+				@extend %jv-border-radius-0;
 			}
 		}
 	}
 	#progressbar-4 {
 		&.ui-progressbar {
 			height: 5px;
-			@include prefix(border-radius,0);
+			@extend %jv-border-radius-0;
 
 			.ui-progressbar-value {
 				background: $color_candlelight;
-				@include prefix(border-radius,0);
+				@extend %jv-border-radius-0;
 			}
 		}
 	}
 	#progressbar-5 {
 		&.ui-progressbar {
 			height: 11px;
-			@include prefix(border-radius, 4px);
+			@extend %jv-border-radius-4;
 
 			.ui-progressbar-value {
 				background: #fec942;
-				@include prefix(border-radius, 4px);
+				@extend %jv-border-radius-4;
 			}
 		}
 	}
 	#progressbar-6 {
 		&.ui-progressbar {
 			height: 11px;
-			@include prefix(border-radius, 4px);
+			@extend %jv-border-radius-4;
 
 			.ui-progressbar-value {
 				background: #2ea0d7;
 				
-				@include prefix(border-radius, 4px);
+				@extend %jv-border-radius-4;
 			}
 		}
 	}
 	#progressbar-7 {
 		&.ui-progressbar {
 			height: 11px;
-			@include prefix(border-radius, 4px);
+			@extend %jv-border-radius-4;
 
 			.ui-progressbar-value {
 				background: $color_abbey;
-				@include prefix(border-radius, 4px);
+				@extend %jv-border-radius-4;
 			}
 		}
 	}
 	#progressbar-8 {
 		&.ui-progressbar {
 			height: 11px;
-			@include prefix(border-radius, 4px);
+			@extend %jv-border-radius-4;
 
 			.ui-progressbar-value {
 				background: $color_candlelight;
-				@include prefix(border-radius, 4px);
+				@extend %jv-border-radius-4;
 			}
 		}
 	}

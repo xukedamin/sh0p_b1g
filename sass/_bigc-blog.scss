@@ -38,7 +38,7 @@
 .title-popular-box {
   font-size: 16px;
   margin: 0;
-  text-transform: uppercase;
+  @extend %text-up;
 
   a {
     display: block;
@@ -82,9 +82,7 @@
 .addmore.btn-link-default {
   width: 100%;
 }
-.mega-entry .popular-box {
-  margin: 0;
-}
+
 .mega-entry .popular-box {
   height: 100%;
   margin: 0;
@@ -106,7 +104,7 @@
   font-size: 16px;
   margin: 0 0 20px;
   text-shadow: 0 0 0;
-  text-transform: uppercase;
+  @extend %text-up;
 
   a {
     color: $color_mine-shaft;
@@ -168,7 +166,7 @@
 
   h3 {
     margin: 15px 0 0;
-    text-align: center;
+    @extend %text-center;
 
     a {
       color: $color_dusty-gray;
@@ -181,7 +179,8 @@
     overflow: hidden;
 
     @include p-el(before, 0, 0) {
-      background: rgba($color_boulder-darker, 0.5) url("icon-zoom.png") no-repeat scroll center center;
+
+      background: rgba($color_boulder-darker, 0.5) url('{{ "icon-zoom.png" | asset_url }}') no-repeat scroll center center;
       left: 50%;
       top: 50%;
       opacity: 0;
@@ -210,7 +209,7 @@
   border-bottom: 1px solid $color_mercury;
   border-top: 1px solid $color_mercury;
   padding: 10px 15px;
-  text-align: center;
+  @extend %text-center;
 
   label {
     color: $color_dusty-gray;
@@ -237,6 +236,7 @@
     }
   }
 }
+
 //single post navigation control
 .control-post {
   border-bottom: 1px solid $color_mercury;
@@ -341,7 +341,7 @@
 .blog-list-title {
   font-size: 16px;
   margin: 0 0 15px;
-  text-transform: uppercase;
+  @extend %text-up;
 
   a {
     color: $color_shark;
@@ -413,12 +413,12 @@
 
   a {
     background: $color_wild-sand none repeat scroll 0 0;
-    border-radius: 50%;
+    @extend %jv-border-radius-50;
     color: $color_dove-gray;
     display: inline-block;
     height: 36px;
     line-height: 36px;
-    text-align: center;
+    @extend %text-center;
     width: 36px;
     @extend %jv-transition-easeout;
 
@@ -437,8 +437,8 @@
   display: block;
   left: 0;
   position: absolute;
-  text-align: center;
-  text-transform: uppercase;
+  @extend %text-center;
+  @extend %text-up;
   width: 125px;
 
   strong {
@@ -453,7 +453,7 @@
 }
 .intro-text-adv {
   background: $color_pumpkin none repeat scroll 0 0;
-  border-radius: 50%;
+  @extend %jv-border-radius-50;
   color: $color_white;
   display: block;
   font-size: 16px;
@@ -468,7 +468,7 @@
   font-size: 16px;
   margin: 0 0 30px;
   padding-bottom: 10px;
-  text-transform: uppercase;
+  @extend %text-up;
 }
 .sidebar-blog {
   .widget {

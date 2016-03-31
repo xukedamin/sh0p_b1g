@@ -8,7 +8,7 @@
     color: $color_dusty-gray;
     font-size: 16px;
     margin: 0;
-    text-transform: uppercase;
+    @extend %text-up;
   }
   .item-accordion {
     .title-accordion {
@@ -65,7 +65,7 @@
     .title-accordion {
       font-size: 13px;
       padding: 17px 15px 17px 25px;
-      text-transform: uppercase;
+      @extend %text-up;
 
       @include p-el(before,14px, 14px) {
         background: rgba($color_black, 0) url('{{ "add.png" | asset_url }}') no-repeat scroll center center;
@@ -95,7 +95,7 @@
       font-size: 13px;
       margin-bottom: 15px;
       padding: 12px 15px 12px 55px;
-      text-transform: uppercase;
+      @extend %text-up;
 
       @include p-el(before,40px, 40px) {
         background: $color_shark url('{{ "add1.png" | asset_url }}') no-repeat scroll center center;

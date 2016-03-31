@@ -28,7 +28,7 @@ Page Detail
       left: 0;
       position: absolute;
       right: 0;
-      text-align: center;
+      @extend %text-center;
       z-index: 20;
       color: $color_white;
       line-height: 2.2;
@@ -38,7 +38,7 @@ Page Detail
         font-size: 15px;
         font-weight: 600;
         margin-bottom: -10px;
-        text-transform: uppercase;
+        @extend %text-up;
       }
     }
 

@@ -17,7 +17,7 @@
   .nav.nav-tabs {
     border: medium none;
     margin: 25px 0 0;
-    text-align: center;
+    @extend %text-center;
   }
   .nav.nav-tabs li {
     display: inline-block;
@@ -31,7 +31,7 @@
       border: medium none;
       border-radius: 0;
       color: $color_shark;
-      text-transform: uppercase;
+      @extend %text-up;
       @extend %jv-transition-easeout;
 
       &:hover {
@@ -47,7 +47,7 @@
 	margin-bottom: 50px;
 
 	.nav-tabs {
-		text-align: center;
+		@extend %text-center;
 		border-bottom: 1px solid $color_mercury;
 
 		> li {
@@ -63,7 +63,7 @@
 				line-height: inherit;
 				margin-right: 6px;
 				padding: 13px 30px;
-				text-transform: uppercase;
+				@extend %text-up;
 				background: transparent;
 				@extend %jv-transition-easeout;
 				border: none;
@@ -148,7 +148,7 @@
 				line-height: inherit;
 				margin-right: 6px;
 				padding: 10px 25px;
-				text-transform: uppercase;
+				@extend %text-up;
 				background: transparent;
 				@extend %jv-transition-easeout;
 				border: none;
